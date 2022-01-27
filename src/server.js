@@ -1,7 +1,6 @@
-import express from 'express';
-import {createServer} from  'http';
-import path from 'path';
-import {Server} from 'socket.io';
+const express= require('express');
+const {createServer}=require('http');
+const socketio=require('socket.io');
 const app = express();
 const httpServer= createServer(app);
 //const staticPath=path.join(__dirname,'public');
@@ -12,7 +11,7 @@ const port=process.env.PORT ||3000;
 httpServer.listen(port,()=>{
     console.log(`html server started on ${port}`);
 });
-const io= new Server(httpServer);
+const io= socketio(httpServer);
 io.on('connection',(socket)=>{
     console.log(socket.id+'j');
 })
