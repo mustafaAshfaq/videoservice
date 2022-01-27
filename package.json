@@ -18,6 +18,9 @@
     "express": "4.17.1",
     "socket.io": "^4.4.1"
   },
+  "optionalDependencies": {
+    "fsevents": "2.1.2"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
